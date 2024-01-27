@@ -1,4 +1,5 @@
 const display = document.querySelector(".display");
+const displayHide = document.querySelector(".displayHide");
 const root = document.querySelector(':root');
 let a = '';
 let b = '';
@@ -55,7 +56,10 @@ function btn(e) {
 
   const key = e.target.textContent;
   if (sign == "" && digit.includes(key)) {
-    a += key;
+    if (a =="0")
+      a = key;
+    else
+      a += key;
     display.textContent = a + " " + sign +  " " + b;
   }
   else if (action.includes(key)) {
@@ -63,7 +67,10 @@ function btn(e) {
     display.textContent = a + " " + sign +  " " + b;
   }
   else if (sign != "" && digit.includes(key)) {
-    b += key;
+    if (b =="0")
+      b = key;
+    else
+      b += key;
     display.textContent = a + " " + sign +  " " + b;
   }
   else if (key == "+/-") {
@@ -88,11 +95,9 @@ function btn(e) {
         display.textContent = Number(a) % Number(b);
         break;
     }
+    displayHide.textContent = a + " " + sign +  " " + b + " =";
     a = display.textContent;
     sign = "";
     b = "";
   }
 }
-
-
-
