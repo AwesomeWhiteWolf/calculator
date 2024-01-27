@@ -63,7 +63,7 @@ function btn(e) {
       a += key;
     display.textContent = a + " " + sign +  " " + b;
   }
-  else if (action.includes(key)) {
+  else if (action.includes(key) && a != "") {
     sign = key;
     display.textContent = a + " " + sign +  " " + b;
   }
