@@ -48,6 +48,7 @@ function clear() {
   b = '';
   sign = '';
   display.textContent = '0';
+  displayHide.textContent = "";
 }
 
 function btn(e) {
